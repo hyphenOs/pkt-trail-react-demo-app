@@ -1,0 +1,39 @@
+.settings-modal {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.settings-container {
+  background: rgba(255, 255, 255, 1);
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+.settings-header {
+  text-align: center;
+}
+.settings-form {
+  margin: auto;
+  width: 40%;
+}
+.settings-form section {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px 2px aliceblue;
+  margin: 20px;
+  padding: 20px;
+}
+
+.settings-form-action-buttons {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  width: 40%;
+  justify-content: space-evenly;
+}

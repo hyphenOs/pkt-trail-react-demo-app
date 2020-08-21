@@ -2,7 +2,7 @@
 
 Demonstrates PktTrail component usage from [`pkt-trail-react`](https://github.com/hyphenOs/pkt-trail-react.git) library
 
-![pkt-trail-react-demo-app-screenshot](pkt-trail-react-1.png)
+![pkt-trail-react-demo-app-screenshot](pkt-trail-react-demo-app-1.png)
 
 ## Getting Started
 
