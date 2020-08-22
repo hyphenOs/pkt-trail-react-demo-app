@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import {ToastsStore, ToastsContainer, ToastsContainerPosition} from 'react-toasts';
+
 import PktTrail from "pkt-trail-react";
 import {
   Button,
@@ -30,6 +33,8 @@ function App() {
     };
     socketClient.onerror = (e) => {
       console.log("Error in connection");
+      ToastsStore.error("Error in connection!");
+      setClientConnected(false);
     };
 
     socketClient.onmessage = (e) => {
@@ -64,6 +69,7 @@ function App() {
     setOpenSettings((openSettings) => !openSettings);
   };
   return (
+    <>
     <AppContainer>
       <AppToolbar>
         <Header>Pkt Trail React Demo App</Header>
@@ -86,6 +92,8 @@ function App() {
         <PktTrail packets={packets} config={config} />
       </AppContent>
     </AppContainer>
+    <ToastsContainer position={ToastsContainerPosition.TOP_CENTER} store={ToastsStore} />
+    </>
   );
 }
 
