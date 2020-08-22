@@ -26,10 +26,16 @@ function App() {
   if (socketClient) {
     socketClient.onopen = (e) => {
       console.log("connection opened");
+      setClientConnected(true);
     };
 
     socketClient.onclose = (e) => {
-      console.log("Connection closed");
+      console.error(e.type, e.wasClean);
+      if (!e.wasClean) {
+        ToastsStore.error("Connection Closed by Server!");
+      }
+      setClientConnected(false);
+      setClientStarted(false);
     };
     socketClient.onerror = (e) => {
       console.log("Error in connection");
@@ -38,7 +44,6 @@ function App() {
     };
 
     socketClient.onmessage = (e) => {
-      console.log("e.data", e.data);
       setPackets(e.data);
     };
   }
@@ -46,22 +51,20 @@ function App() {
   const toggleConnect = () => {
     if (clientConnected) {
       socketClient.close();
-      setClientConnected(false);
     } else {
       socketClient = new WebSocket(config.appConfig.websocketServer);
-      setClientConnected(true);
     }
   };
   const toggleStart = () => {
     if (clientStarted) {
       setClientStarted(false);
-      stream("stop");
+      controlMessage("stop");
     } else {
       setClientStarted(true);
-      stream("start");
+      controlMessage("start");
     }
   };
-  const stream = (message) => {
+  const controlMessage = (message) => {
     socketClient.send(message);
   };
 

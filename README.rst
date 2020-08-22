@@ -3,7 +3,8 @@ Pkt Trail React Demo App
 
 Demonstrates PktTrail component usage from `pkt-trail-react <https://github.com/hyphenOs/pkt-trail-react.git>`_ library
 
-![pkt-trail-react-demo-app-screenshot](pkt-trail-react-demo-app-1.png)
+.. image:: pkt-trail-react-demo-app-1.png
+  :alt: pkt-trail-react-demo-app-screenshot
 
 Getting Started
 ---------------
