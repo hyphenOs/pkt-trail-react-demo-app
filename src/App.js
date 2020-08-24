@@ -16,6 +16,7 @@ import Settings from "./components/Settings";
 let socketClient;
 
 function App() {
+  const [clientConnectRequested, setClientConnectRequested] = useState(false);
   const [clientConnected, setClientConnected] = useState(false);
   const [clientStarted, setClientStarted] = useState(false);
   const [config, setConfig] = useState(defaultConfig);
@@ -26,12 +27,14 @@ function App() {
   if (socketClient) {
     socketClient.onopen = (e) => {
       console.log("connection opened");
+      setClientConnected(true);
+      setClientConnectRequested(false);
     };
 
     socketClient.onclose = (e) => {
       console.error(e);
       if (!e.wasClean) {
-        ToastsStore.error("Connection Closed by Server!");
+        ToastsStore.error("Connection Closed by Server! Check if Server is running!");
       }
       setClientConnected(false);
       setClientStarted(false);
@@ -40,6 +43,7 @@ function App() {
     socketClient.onerror = (e) => {
       console.log("Error in connection");
       setClientConnected(false);
+      setClientConnectRequested(false);
     };
 
     socketClient.onmessage = (e) => {
@@ -51,7 +55,7 @@ function App() {
     if (clientConnected) {
       socketClient.close();
     } else {
-      setClientConnected(true);
+      setClientConnectRequested(true);
       try {
         socketClient = new WebSocket(config.appConfig.websocketServer);
       } catch (error) {
@@ -80,7 +84,7 @@ function App() {
     <AppContainer>
       <AppToolbar>
         <Header>Pkt Trail React Demo App</Header>
-        <Button disabled={clientStarted} onClick={toggleConnect}>
+        <Button disabled={clientStarted || clientConnectRequested} onClick={toggleConnect}>
           {clientConnected ? "Disconnect" : "Connect"}
         </Button>
         <Button disabled={!clientConnected} onClick={toggleStart}>

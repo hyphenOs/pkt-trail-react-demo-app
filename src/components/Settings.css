@@ -12,6 +12,7 @@
   width: 90%;
   height: 90%;
   margin: auto;
+  overflow: auto;
 }
 .settings-header {
   text-align: center;
