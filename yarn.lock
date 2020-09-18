@@ -7671,9 +7671,9 @@ pkg-up@3.1.0, pkg-up@^3.1.0:
   dependencies:
     find-up "^3.0.0"
 
-"pkt-trail-react@https://github.com/hyphenOs/pkt-trail-react.git#v0.0.2":
-  version "0.0.2"
-  resolved "https://github.com/hyphenOs/pkt-trail-react.git#1cbf4bc25ff95d9eaf7c9198150bee620e5f8012"
+"pkt-trail-react@https://github.com/hyphenOs/pkt-trail-react.git#v0.0.3":
+  version "0.0.3"
+  resolved "https://github.com/hyphenOs/pkt-trail-react.git#c73e924b9a538bf0f85e723e748ab6132247f4e4"
   dependencies:
     react "^16.13.1"
     react-json-tree "^0.11.2"
