@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import {ToastsStore, ToastsContainer, ToastsContainerPosition} from 'react-toasts';
+import {
+  ToastsStore,
+  ToastsContainer,
+  ToastsContainerPosition,
+} from "react-toasts";
 
 import PktTrail from "pkt-trail-react";
 import {
@@ -12,6 +16,9 @@ import {
 } from "./components/StyledComponents";
 import defaultConfig from "./constants/config";
 import Settings from "./components/Settings";
+import { useCallback } from "react";
+
+import packets5 from './testdata/sample-packets-5.json'
 
 let socketClient;
 
@@ -24,6 +31,8 @@ function App() {
 
   const [packets, setPackets] = useState([]);
 
+  const [isPktTrailReady, setIsPktTrailReady] = useState(false);
+
   if (socketClient) {
     socketClient.onopen = (e) => {
       console.log("connection opened");
@@ -34,7 +43,9 @@ function App() {
     socketClient.onclose = (e) => {
       console.error(e);
       if (!e.wasClean) {
-        ToastsStore.error("Connection Closed by Server! Check if Server is running!");
+        ToastsStore.error(
+          "Connection Closed by Server! Check if Server is running!"
+        );
       }
       setClientConnected(false);
       setClientStarted(false);
@@ -79,31 +90,53 @@ function App() {
   const openFormSettings = () => {
     setOpenSettings((openSettings) => !openSettings);
   };
+
+  const getPktTrailReadyStatus = useCallback((readyStatus) => {
+    setIsPktTrailReady(readyStatus);
+  }, []);
+
   return (
     <>
-    <AppContainer>
-      <AppToolbar>
-        <Header>Pkt Trail React Demo App</Header>
-        <Button disabled={clientStarted || clientConnectRequested} onClick={toggleConnect}>
-          {clientConnected ? "Disconnect" : "Connect"}
-        </Button>
-        <Button disabled={!clientConnected} onClick={toggleStart}>
-          {clientStarted ? "Stop" : "Start"}
-        </Button>
-        <Button onClick={openFormSettings}>Settings</Button>
-        {openSettings && (
-          <Settings
-            setOpenSettings={setOpenSettings}
-            setConfigProps={setConfig}
-            configProps={config}
+      <AppContainer>
+        <AppToolbar>
+          <Header>Pkt Trail React Demo App</Header>
+          <Button
+            disabled={
+              clientStarted || clientConnectRequested || !isPktTrailReady
+            }
+            onClick={toggleConnect}
+          >
+            {clientConnected ? "Disconnect" : "Connect"}
+          </Button>
+          <Button
+            disabled={!clientConnected || !isPktTrailReady}
+            onClick={toggleStart}
+          >
+            {clientStarted ? "Stop" : "Start"}
+          </Button>
+          <Button disabled={!isPktTrailReady} onClick={openFormSettings}>
+            Settings
+          </Button>
+          {openSettings && (
+            <Settings
+              setOpenSettings={setOpenSettings}
+              setConfigProps={setConfig}
+              configProps={config}
+            />
+          )}
+        </AppToolbar>
+        <AppContent>
+          <PktTrail
+            packets={packets}
+            config={config}
+            getPktTrailReadyStatus={getPktTrailReadyStatus}
           />
-        )}
-      </AppToolbar>
-      <AppContent>
-        <PktTrail packets={packets} config={config} />
-      </AppContent>
-    </AppContainer>
-    <ToastsContainer position={ToastsContainerPosition.TOP_CENTER} store={ToastsStore} />
+        </AppContent>
+      </AppContainer>
+      <ToastsContainer
+        position={ToastsContainerPosition.TOP_CENTER}
+        store={ToastsStore}
+      />
     </>
   );
 }
