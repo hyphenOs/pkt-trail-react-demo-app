@@ -1,25 +1,25 @@
 [
   {
     "frame": {
-      "frame.interface_id": "0",
-      "frame.interface_id_tree": {
-        "frame.interface_name": "wlp0s20f3"
+      "frame_interface_id": "0",
+      "frame_interface_id_tree": {
+        "frame_interface_name": "wlp0s20f3"
       },
-      "frame.encap_type": "1",
-      "frame.time": "Jul 31, 2020 14:36:08.664716964 IST",
-      "frame.offset_shift": "0.000000000",
-      "frame.time_epoch": "1596186368.664716964",
-      "frame.time_delta": "0.000000000",
-      "frame.time_delta_displayed": "0.000000000",
-      "frame.time_relative": "0.000000000",
-      "frame.number": "1",
-      "frame.len": "620",
-      "frame.cap_len": "620",
-      "frame.marked": "0",
-      "frame.ignored": "0",
-      "frame.protocols": "eth:ethertype:ip:tcp:tls",
-      "frame.coloring_rule.name": "TCP",
-      "frame.coloring_rule.string": "tcp"
+      "frame_encap_type": "1",
+      "frame_time": "Jul 31, 2020 14:36:08.664716964 IST",
+      "frame_offset_shift": "0.000000000",
+      "frame_time_epoch": "1596186368.664716964",
+      "frame_time_delta": "0.000000000",
+      "frame_time_delta_displayed": "0.000000000",
+      "frame_time_relative": "0.000000000",
+      "frame_number": 1,
+      "frame_len": "620",
+      "frame_cap_len": "620",
+      "frame_marked": "0",
+      "frame_ignored": "0",
+      "frame_protocols": "eth:ethertype:ip:tcp:tls",
+      "frame_coloring_rule.name": "TCP",
+      "frame_coloring_rule.string": "tcp"
     },
     "eth": {
       "eth.dst": "00:1a:9a:de:ad:05",
@@ -154,25 +154,25 @@
   },
   {
     "frame": {
-      "frame.interface_id": "0",
-      "frame.interface_id_tree": {
-        "frame.interface_name": "wlp0s20f3"
+      "frame_interface_id": "0",
+      "frame_interface_id_tree": {
+        "frame_interface_name": "wlp0s20f3"
       },
-      "frame.encap_type": "1",
-      "frame.time": "Jul 31, 2020 14:36:08.669562422 IST",
-      "frame.offset_shift": "0.000000000",
-      "frame.time_epoch": "1596186368.669562422",
-      "frame.time_delta": "0.004845458",
-      "frame.time_delta_displayed": "0.004845458",
-      "frame.time_relative": "0.004845458",
-      "frame.number": "2",
-      "frame.len": "1514",
-      "frame.cap_len": "1514",
-      "frame.marked": "0",
-      "frame.ignored": "0",
-      "frame.protocols": "eth:ethertype:ip:tcp:tls",
-      "frame.coloring_rule.name": "TCP",
-      "frame.coloring_rule.string": "tcp"
+      "frame_encap_type": "1",
+      "frame_time": "Jul 31, 2020 14:36:08.669562422 IST",
+      "frame_offset_shift": "0.000000000",
+      "frame_time_epoch": "1596186368.669562422",
+      "frame_time_delta": "0.004845458",
+      "frame_time_delta_displayed": "0.004845458",
+      "frame_time_relative": "0.004845458",
+      "frame_number": 2,
+      "frame_len": "1514",
+      "frame_cap_len": "1514",
+      "frame_marked": "0",
+      "frame_ignored": "0",
+      "frame_protocols": "eth:ethertype:ip:tcp:tls",
+      "frame_coloring_rule.name": "TCP",
+      "frame_coloring_rule.string": "tcp"
     },
     "eth": {
       "eth.dst": "38:00:25:e0:ab:64",
@@ -300,25 +300,25 @@
   },
   {
     "frame": {
-      "frame.interface_id": "0",
-      "frame.interface_id_tree": {
-        "frame.interface_name": "wlp0s20f3"
+      "frame_interface_id": "0",
+      "frame_interface_id_tree": {
+        "frame_interface_name": "wlp0s20f3"
       },
-      "frame.encap_type": "1",
-      "frame.time": "Jul 31, 2020 14:36:08.669595800 IST",
-      "frame.offset_shift": "0.000000000",
-      "frame.time_epoch": "1596186368.669595800",
-      "frame.time_delta": "0.000033378",
-      "frame.time_delta_displayed": "0.000033378",
-      "frame.time_relative": "0.004878836",
-      "frame.number": "3",
-      "frame.len": "54",
-      "frame.cap_len": "54",
-      "frame.marked": "0",
-      "frame.ignored": "0",
-      "frame.protocols": "eth:ethertype:ip:tcp",
-      "frame.coloring_rule.name": "TCP RST",
-      "frame.coloring_rule.string": "tcp.flags.reset eq 1"
+      "frame_encap_type": "1",
+      "frame_time": "Jul 31, 2020 14:36:08.669595800 IST",
+      "frame_offset_shift": "0.000000000",
+      "frame_time_epoch": "1596186368.669595800",
+      "frame_time_delta": "0.000033378",
+      "frame_time_delta_displayed": "0.000033378",
+      "frame_time_relative": "0.004878836",
+      "frame_number": 3,
+      "frame_len": "54",
+      "frame_cap_len": "54",
+      "frame_marked": "0",
+      "frame_ignored": "0",
+      "frame_protocols": "eth:ethertype:ip:tcp",
+      "frame_coloring_rule.name": "TCP RST",
+      "frame_coloring_rule.string": "tcp.flags.reset eq 1"
     },
     "eth": {
       "eth.dst": "00:1a:9a:de:ad:05",
@@ -430,25 +430,25 @@
   },
   {
     "frame": {
-      "frame.interface_id": "0",
-      "frame.interface_id_tree": {
-        "frame.interface_name": "wlp0s20f3"
+      "frame_interface_id": "0",
+      "frame_interface_id_tree": {
+        "frame_interface_name": "wlp0s20f3"
       },
-      "frame.encap_type": "1",
-      "frame.time": "Jul 31, 2020 14:36:08.677263169 IST",
-      "frame.offset_shift": "0.000000000",
-      "frame.time_epoch": "1596186368.677263169",
-      "frame.time_delta": "0.007667369",
-      "frame.time_delta_displayed": "0.007667369",
-      "frame.time_relative": "0.012546205",
-      "frame.number": "4",
-      "frame.len": "66",
-      "frame.cap_len": "66",
-      "frame.marked": "0",
-      "frame.ignored": "0",
-      "frame.protocols": "eth:ethertype:ip:tcp",
-      "frame.coloring_rule.name": "TCP",
-      "frame.coloring_rule.string": "tcp"
+      "frame_encap_type": "1",
+      "frame_time": "Jul 31, 2020 14:36:08.677263169 IST",
+      "frame_offset_shift": "0.000000000",
+      "frame_time_epoch": "1596186368.677263169",
+      "frame_time_delta": "0.007667369",
+      "frame_time_delta_displayed": "0.007667369",
+      "frame_time_relative": "0.012546205",
+      "frame_number": 4,
+      "frame_len": "66",
+      "frame_cap_len": "66",
+      "frame_marked": "0",
+      "frame_ignored": "0",
+      "frame_protocols": "eth:ethertype:ip:tcp",
+      "frame_coloring_rule.name": "TCP",
+      "frame_coloring_rule.string": "tcp"
     },
     "eth": {
       "eth.dst": "38:00:25:e0:ab:64",
@@ -574,25 +574,25 @@
   },
   {
     "frame": {
-      "frame.interface_id": "0",
-      "frame.interface_id_tree": {
-        "frame.interface_name": "wlp0s20f3"
+      "frame_interface_id": "0",
+      "frame_interface_id_tree": {
+        "frame_interface_name": "wlp0s20f3"
       },
-      "frame.encap_type": "1",
-      "frame.time": "Jul 31, 2020 14:36:08.739664782 IST",
-      "frame.offset_shift": "0.000000000",
-      "frame.time_epoch": "1596186368.739664782",
-      "frame.time_delta": "0.062401613",
-      "frame.time_delta_displayed": "0.062401613",
-      "frame.time_relative": "0.074947818",
-      "frame.number": "5",
-      "frame.len": "137",
-      "frame.cap_len": "137",
-      "frame.marked": "0",
-      "frame.ignored": "0",
-      "frame.protocols": "eth:ethertype:ip:tcp:tls",
-      "frame.coloring_rule.name": "TCP",
-      "frame.coloring_rule.string": "tcp"
+      "frame_encap_type": "1",
+      "frame_time": "Jul 31, 2020 14:36:08.739664782 IST",
+      "frame_offset_shift": "0.000000000",
+      "frame_time_epoch": "1596186368.739664782",
+      "frame_time_delta": "0.062401613",
+      "frame_time_delta_displayed": "0.062401613",
+      "frame_time_relative": "0.074947818",
+      "frame_number": 5,
+      "frame_len": "137",
+      "frame_cap_len": "137",
+      "frame_marked": "0",
+      "frame_ignored": "0",
+      "frame_protocols": "eth:ethertype:ip:tcp:tls",
+      "frame_coloring_rule.name": "TCP",
+      "frame_coloring_rule.string": "tcp"
     },
     "eth": {
       "eth.dst": "38:00:25:e0:ab:64",
